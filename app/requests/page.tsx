@@ -1,9 +1,12 @@
-﻿export default function RequestsPage() {
+﻿export default function CreateRequestPage() {
   return (
     <div style={{ padding: '2rem' }}>
-      <h1>Equipment Requests</h1>
-      <p>Member and staff requests will be listed here.</p>
-      <button className="primary-btn" style={{ marginTop: '1rem' }}>Create New Request</button>
+      <h1>Create New Request</h1>
+      <p>Form to request medical equipment will appear here.</p>
+      <div style={{ marginTop: '2rem' }}>
+        <button className="secondary-btn">Cancel</button>
+        <button className="primary-btn" style={{ marginLeft: '1rem' }}>Submit Request</button>
+      </div>
     </div>
   );
 }
