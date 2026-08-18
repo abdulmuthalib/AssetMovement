@@ -1,5 +1,5 @@
-import { PageShell } from '@/components/page-shell';
-import { StatCard } from '@/components/stat-card';
+import { PageShell } from '@/app/components/page-shell';
+import { StatCard } from '@/app/components/stat-card';
 import { activityRows, requestRows, stats } from '@/lib/mock-data';
 
 export default function HomePage() {

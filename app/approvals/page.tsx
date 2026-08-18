@@ -1,4 +1,4 @@
-import { PageShell } from '@/components/page-shell';
+import { PageShell } from '@/app/components/page-shell';
 import { requestRows } from '@/lib/mock-data';
 
 export default function ApprovalsPage() {

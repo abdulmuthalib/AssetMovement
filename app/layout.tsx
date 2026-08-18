@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Sidebar } from '@/components/sidebar';
+import { Sidebar } from '@/app/components/sidebar';
 
 export const metadata: Metadata = {
   title: 'Medical Asset Register MVP',
