@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const links = [
   { href: '/', label: 'Dashboard' },
@@ -10,6 +13,8 @@ const links = [
 ];
 
 export function Sidebar() {
+  const pathname = usePathname();
+
   return (
     <aside className="sidebar">
       <div className="brand">
@@ -21,11 +26,19 @@ export function Sidebar() {
       </div>
 
       <nav className="nav">
-        {links.map((link) => (
-          <Link key={link.href} href={link.href} className={link.href === '/' ? 'active' : ''}>
-            {link.label}
-          </Link>
-        ))}
+        {links.map((link) => {
+          const isActive = pathname === link.href || (pathname?.startsWith(link.href) && link.href !== '/');
+          
+          return (
+            <Link 
+              key={link.href} 
+              href={link.href as any}
+              className={isActive ? 'active' : ''}
+            >
+              {link.label}
+            </Link>
+          );
+        })}
       </nav>
     </aside>
   );

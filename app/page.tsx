@@ -1,3 +1,6 @@
+'use client'; // Add this because we're using Link component
+
+import Link from 'next/link';
 import { PageShell } from '@/app/components/page-shell';
 import { StatCard } from '@/app/components/stat-card';
 import { activityRows, requestRows, stats } from '@/lib/mock-data';
@@ -9,8 +12,12 @@ export default function HomePage() {
       subtitle="Overview of asset movement, approvals, and availability across the organization."
       actions={
         <>
-          <button className="secondary-btn">Export PDF</button>
-          <button className="primary-btn">New Request</button>
+          <Link href="/reports" className="secondary-btn">
+            Export PDF
+          </Link>
+          <Link href="/requests/create" className="primary-btn">
+            New Request
+          </Link>
         </>
       }
     >
@@ -24,7 +31,9 @@ export default function HomePage() {
         <div className="panel">
           <div className="section-header">
             <h2>Request Status</h2>
-            <button className="ghost-btn">View details</button>
+            <Link href="/requests" className="ghost-btn">
+              View details
+            </Link>
           </div>
           <div className="table-wrap">
             <table className="data-table">
@@ -53,7 +62,9 @@ export default function HomePage() {
         <div className="panel">
           <div className="section-header">
             <h2>Recent Activity</h2>
-            <button className="ghost-btn">Timeline</button>
+            <Link href="/activity" className="ghost-btn">
+              Timeline
+            </Link>
           </div>
           <div className="table-wrap">
             <table className="data-table">
